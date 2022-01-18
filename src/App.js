@@ -1,13 +1,9 @@
 import './App.css';
-import Navbar from './Navbar';
-import Background from './Background';
 
 function App() {
   return (
     <div className="App">
-      <Background />
       <header className="App-header">
-        <Navbar />
         <h1 className='header-container'>
           <div className="orange-large">TheRealSeat</div><div className="large-white">&nbsp;Capstone Project</div>
         </h1>
