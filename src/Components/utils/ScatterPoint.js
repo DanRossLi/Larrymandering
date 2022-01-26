@@ -30,7 +30,7 @@ const ScatterPoint = ({ data = [], color, x, y, xScale, yScale, setSelector, sel
           div.transition()		
               .duration(200)		
               .style("opacity", .9);		
-          div	.html((d.owner) + "<br/>"  + d.type)	
+          div.html((d.owner) + "<br/>"  + d.type)	
               .style("left", (event.pageX) + "px")		
               .style("top", (event.pageY - 28) + "px");	
           })
@@ -56,7 +56,7 @@ const ScatterPoint = ({ data = [], color, x, y, xScale, yScale, setSelector, sel
       e.preventDefault();
       console.log("RightClicked")
     }
-  }, []);
+  }, [data, div, setSelector, xScale]);
 
   //Initial only Fires ONCE, it will not render everything...
   React.useEffect(() => {
