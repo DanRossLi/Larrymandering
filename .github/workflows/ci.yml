@@ -26,7 +26,8 @@ jobs:
         yarn install
 
     - name: Production Build
-      run: yarn build
+      run: |
+        CI='' yarn build
 
     - name: Deploy to s3
       run: |
