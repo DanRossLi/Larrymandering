@@ -20,7 +20,10 @@ const ScatterPoint = ({ data = [], color, x, y, xScale, yScale, setSelector, sel
       .enter()
       .append("circle")
         .attr('class', (d, i) => "dot"+i)
-        .attr("cx", d => xScale(0))
+        .attr('fill', (d) => d.type === 'amp' ? "red" : "black")
+        .attr("cx", d => xScale(d[x]))
+        .attr("cy", d => yScale(d[y]))
+        .attr("r", 4)
         .attr("fill-opacity",1)
         .on('mouseenter', handleMouseOver)
         .on('mouseleave', handleMouseOut)
@@ -62,21 +65,6 @@ const ScatterPoint = ({ data = [], color, x, y, xScale, yScale, setSelector, sel
   React.useEffect(() => {
     initial();
   }, [initial]);
-
-  React.useEffect(() => {
-    console.log("In yScale Change")
-    const svg = d3.select(ref.current);
-    svg.selectAll('circle')
-      .attr('fill', 'black')
-      .transition()
-      .duration(500)
-      //  .delay((d, i) => i * .1)
-      .attr("cx", d => xScale(d[x]))
-      .attr("cy", d => yScale(d[y]))
-      .attr("r", 4)
-      .style("fill", color)
-
-  }, [ref, data, yScale, xScale, x, y, color]);
 
   return (
     <g ref={ref}/>
