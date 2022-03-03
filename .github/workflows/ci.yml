@@ -19,7 +19,7 @@ jobs:
 
     - name: Map Branch to Domain ENV VAR
       run: |
-        echo "DOMAIN=levelmap" >> $GITHUB_ENV
+        echo "DOMAIN=www.larrymandering.com" >> $GITHUB_ENV
 
     - name: Yarn Install
       run: |
