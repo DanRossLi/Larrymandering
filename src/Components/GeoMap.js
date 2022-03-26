@@ -10,10 +10,6 @@ export const GeoGraph = ({ data = {}, ...props}) => {
       <Geo
         data={data}
         color={"black"}
-        x={x}
-        y={y}
-        xScale={xScale}
-        yScale={yScale}
         props={props}      
       />
     </React.Fragment>
