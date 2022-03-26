@@ -8,6 +8,7 @@ import ScatterPoint from "./utils/ScatterPoint"
 
 
 export const ScatterChart = ({ data = [], x, y, xScale, yScale, ...props}) => {
+  console.log("ScatterChart")
   return (
     <React.Fragment>
       <Axis
@@ -71,7 +72,7 @@ const Example = ({data}) => {
         y = {"y"}
         xtype = {"linear"}
         ytype = {"linear"}
-        dimensions={{width: 1200, height: 1200, margin: 10}}
+        dimensions={{width: 600, height: 600, margin: 10}}
       />}
     </div>
   );

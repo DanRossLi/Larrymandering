@@ -4,6 +4,7 @@ import useResize from "./useResize";
 const useDimensions = ({ maxHeight, margin = {}, scaleCoef = 0.5 }) => {
   const ref = React.useRef(null);
   const { width } = useResize(ref);
+  console.log("useDimensions")
   
   const height =
     !maxHeight || width * scaleCoef < maxHeight ? width * scaleCoef : maxHeight;
