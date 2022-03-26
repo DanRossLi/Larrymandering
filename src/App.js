@@ -1,6 +1,6 @@
 import './App.css';
 import GeoMap from "./Components/GeoMap"
-import data from './117CongressGeoJson.json'
+import data from './cali.json'
 
 function App() {
   return (

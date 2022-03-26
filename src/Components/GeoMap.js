@@ -24,10 +24,6 @@ const Example = ({data}) => {
         graph = {GeoGraph}
         margin ={{left: 20, right: 20, top: 30, bottom: 50}}
         data={data}
-        x = {"x"}
-        y = {"y"}
-        xtype = {"linear"}
-        ytype = {"linear"}
         dimensions={{width: 600, height: 600, margin: 10}}
       />}
     </div>
