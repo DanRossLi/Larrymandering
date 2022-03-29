@@ -9,12 +9,18 @@ const Geo = ({ data = {}, color, setSelector, selector, sort, ...props}) => {
     .attr("class", "tooltip")				
     .style("opacity", 0);
   
-  console.log(data)
+  console.log(props)
+  console.log(props.props.svgWidth)
 
-  const projection = d3.geoMercator();
+  var projection = d3.geoMercator().center([-114, 36]).scale([props.props.svgWidth/(Math.PI/7)]);
 
+  if (props.props.svgWidth > 100) {
+    projection = projection
+  } 
+    
   const path = d3.geoPath()
   .projection(projection)
+  
 
   // Join the FeatureCollection's features array to path elements
   const initial = React.useCallback(() => {
@@ -31,13 +37,14 @@ const Geo = ({ data = {}, color, setSelector, selector, sort, ...props}) => {
       .on('mouseleave', handleMouseOut)
       .on('dblclick', handleDblClick)
       .on('contextmenu', handleRightClick)
+      .attr("fill", "steelblue")
 
     function handleMouseOver(d, i) {  
-      setSelector("." + d3.select(this).attr("class"))
+      d3.select(this).attr("fill", "green")
     }
 
     function handleMouseOut(d, i) {
-      setSelector(null)
+      d3.select(this).attr("fill", "steelblue")
     }
 
     function handleDblClick(d, i) {
